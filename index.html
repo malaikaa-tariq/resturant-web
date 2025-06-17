@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Velvet Bite</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    /* :root {
+      --main-bg: #0a0a0a;
+      --main-text: #ffffff;
+    } */
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--main-bg);
+      color: var(--main-text);
+      overflow-x: hidden;
+    }
+
+    #restaurantCarousel .carousel-inner img {
+      max-height: 400px;
+      width: 100%;
+      object-fit: contain;
+      background-color: #000;
+    }
+
+    .carousel-caption {
+      bottom: 20px;
+    }
+
+    .glass-section {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body.text-dark {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+<div id="particles-js"></div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg px-4" style="background-color: rgb(188, 70, 70);">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="resturant logo.png" alt="Logo" width="40" height="40" class="me-5 rounded-circle" />
+    <span class="fw-bold fs-4 me-5" style="color: rgb(255, 239, 219);">The Velvet Bite</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+    <ul class="navbar-nav">
+      <li class="nav-item me-5">
+        <a class="nav-link d-flex align-items-center gap-2" style="color: rgb(255, 239, 219); font-weight: bold;" href="#">
+          <i class="bi bi-house-door-fill"></i> Home
+        </a>
+      </li>
+      <li class="nav-item me-5">
+        <a class="nav-link d-flex align-items-center gap-2" style="color: rgb(255, 239, 219); font-weight: bold;" href="menu.html">
+          <i class="bi bi-book-fill"></i> Menu
+        </a>
+      </li>
+      <li class="nav-item me-5">
+        <a class="nav-link d-flex align-items-center gap-2" style="color: rgb(255, 239, 219); font-weight: bold;" href="about.html">
+          <i class="bi bi-info-circle-fill"></i> About
+        </a>
+      </li>
+      <li class="nav-item me-5">
+        <a class="nav-link d-flex align-items-center gap-2" style="color: rgb(255, 239, 219); font-weight: bold;" href="gallery.html">
+          <i class="bi bi-images"></i> Gallery
+        </a>
+      </li>
+      <li class="nav-item me-5">
+        <a class="nav-link d-flex align-items-center gap-2" style="color: rgb(255, 239, 219); font-weight: bold;" href="contact.html">
+          <i class="bi bi-telephone-fill"></i> Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- Main Carousel -->
+<section class="container py-5">
+  <h2 class="text-center mb-4">Featured Dishes of The Velvet Bite</h2>
+
+  <div id="restaurantCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Featured Dishes Carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#restaurantCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#restaurantCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#restaurantCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Carousel Items -->
+    <div class="carousel-inner rounded shadow">
+      <div class="carousel-item active">
+        <img src="resturant1.jpg" class="d-block w-100" alt="Grilled Steak" />
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3 py-2 w-25 mx-auto">
+          <h5>Grilled Steak</h5>
+          <p>Juicy steak grilled to perfection with herbs and spices.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="resturant2.jpg" class="d-block w-100" alt="Creamy Pasta" />
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3 py-2 w-25 mx-auto">
+          <h5>Creamy Pasta</h5>
+          <p>Handmade pasta in rich garlic and basil cream sauce.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="resturant3.jpg" class="d-block w-100" alt="Chocolate Dessert" />
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3 py-2 w-25 mx-auto">
+          <h5>Chocolate Dessert</h5>
+          <p>Molten chocolate lava cake with a raspberry swirl.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#restaurantCarousel" data-bs-slide="prev" aria-label="Previous Slide">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#restaurantCarousel" data-bs-slide="next" aria-label="Next Slide">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+<!-- Signature Dishes Section -->
+<section class="container py-5">
+  <h2 class="text-center mb-4">Signature Dishes</h2>
+  <div class="glass-section">
+
+    <!-- Carousel for mobile -->
+    <div id="dishesCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card border-0 mx-auto h-100 d-flex flex-column" style="max-width: 90vw;">
+            <img src="signature-dish1.jpg" class="card-img-top rounded" alt="Truffle Glazed Filet" />
+            <div class="card-body text-dark d-flex flex-column">
+              <h5 class="card-title">Truffle Glazed Filet</h5>
+              <p class="card-text flex-grow-1">Perfectly seared and drizzled with velvet truffle reduction.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card border-0 mx-auto h-100 d-flex flex-column" style="max-width: 90vw;">
+            <img src="signature-dish2.jpg" class="card-img-top rounded" alt="Velvet Cream Pasta" />
+            <div class="card-body text-dark d-flex flex-column">
+              <h5 class="card-title">Velvet Cream Pasta</h5>
+              <p class="card-text flex-grow-1">Handmade pasta in a rich garlic cream with basil oil.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card border-0 mx-auto h-100 d-flex flex-column" style="max-width: 90vw;">
+            <img src="signature-dish3.jpg" class="card-img-top rounded" alt="Chocolate Lava Delight" />
+            <div class="card-body text-dark d-flex flex-column">
+              <h5 class="card-title">Chocolate Lava Delight</h5>
+              <p class="card-text flex-grow-1">Molten chocolate with a velvet raspberry swirl.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#dishesCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#dishesCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+<!-- Grid for desktop -->
+<div class="row g-4 d-none d-md-flex mt-4">
+  <div class="col-md-4">
+    <div class="card h-100 border-0 shadow-sm d-flex flex-column">
+      <img src="signature-dish1.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Truffle Glazed Filet" />
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">Truffle Glazed Filet</h5>
+        <p class="card-text mb-4">Perfectly seared and drizzled with velvet truffle reduction.</p>
+        <div class="mt-auto"></div> <!-- Push bottom content (if any) -->
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card h-100 border-0 shadow-sm d-flex flex-column">
+      <img src="signature-dish2.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Velvet Cream Pasta" />
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">Velvet Cream Pasta</h5>
+        <p class="card-text mb-4">Handmade pasta in a rich garlic cream with basil oil.</p>
+        <div class="mt-auto"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card h-100 border-0 shadow-sm d-flex flex-column">
+      <img src="signature-dish3.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Chocolate Lava Delight" />
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">Chocolate Lava Delight</h5>
+        <p class="card-text mb-4">Molten chocolate with a velvet raspberry swirl.</p>
+        <div class="mt-auto"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- About Section (glassmorphism with Bootstrap) -->
+<section class="py-5">
+  <div class="container">
+    <div class="bg-white bg-opacity-75 rounded-3 shadow-lg p-4">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0 text-dark">
+          <h3>Our Story</h3>
+          <p>At The Velvet Bite, we believe dining is an art. Every plate we serve is designed to offer a symphony of flavor, texture, and aroma in a luxurious yet welcoming environment.</p>
+          <a href="about.html" class="btn btn-dark rounded-pill px-4 mt-2">Read More</a>
+        </div>
+        <div class="col-md-6">
+          <img src="resturantInterior.jpg" class="img-fluid rounded" style="width: 250px; margin: 30px;" alt="Interior" />
+           <img src="resturantInterior2.jpeg" class="img-fluid rounded" style="width: 250px;" alt="Interior" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Reservation CTA -->
+  <section class="text-center py-5">
+    <div class="container">
+      <h2 class="mb-3 fw-bold">Ready to Dine In Style?</h2>
+      <p class="mb-4 fs-5">Reserve your table now and experience the velvet touch.</p>
+      <a href="contact.html" class="btn btn-dark btn-lg rounded-pill px-4 me-3 mb-2">Book a Table</a>
+      <a href="menu.html" class="btn btn-dark btn-lg rounded-pill px-4 mb-2">See Menu</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4" style="background-color: rgb(188, 70, 70);">
+    <div class="container">
+      <p class="mb-1 small">© 2025 The Velvet Bite. All rights reserved.</p>
+      <div class="d-flex justify-content-center gap-4 fs-5">
+        <a href="#" class="text-dark" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-dark" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-dark" aria-label="Linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="text-dark" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-dark" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+   <script src="script.js"></script>
+   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      
+</body>
+</html>

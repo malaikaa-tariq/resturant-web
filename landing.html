@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Epicurean — Fine Dining Experience</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+</head>
+
+<body>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+    <img src="logo 2.png" alt="Epicurean Logo" class="navbar-logo" />
+    Epicurean
+  </a>
+
+  <button
+    class="navbar-toggler"   
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation">     
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav gap-4">
+      <li class="nav-item">
+        <a class="nav-link active" href="landing.html"><i class="fa-solid fa-house"></i> Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="menu.html"><i class="fa-solid fa-utensils"></i> Menu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="Reservation.html"><i class="fa-solid fa-calendar-check"></i> Reservations</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <video autoplay muted loop playsinline>
+    <source src="https://cdn.pixabay.com/vimeo/456435128/food-25655.mp4" type="video/mp4" />
+  </video>
+
+  <h1 class="tagline">Epicurean</h1>
+  <p class="subtagline">Fine Dining Reimagined</p>
+  <div>
+    <a href="menu.html"><button class="btn-glow me-3">Explore Menu</button></a>
+    <a href="Reservation.html"><button class="btn-glow">Book a Table</button></a>
+  </div>
+
+   <!-- Carousel Section -->
+  <section class="container py-5">
+    <h2 class="text-center mb-4">Featured Dishes of The Epicurean</h2>
+
+    <div
+      id="restaurantCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="4000"
+      aria-label="Featured Dishes Carousel"
+    >
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#restaurantCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#restaurantCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#restaurantCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Carousel Items -->
+      <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active">
+          <img src="resturant1.jpg" class="d-block w-100" alt="Grilled Steak" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Grilled Steak</h5>
+            <p>Juicy steak grilled to perfection with herbs and spices.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="res43.PNG" class="d-block w-100" alt="Creamy Pasta" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Creamy Pasta</h5>
+            <p>Handmade pasta in rich garlic and basil cream sauce.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="res7.jpg" class="d-block w-100" alt="Chocolate Dessert" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Chocolate Dessert</h5>
+            <p>Molten chocolate lava cake with a raspberry swirl.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#restaurantCarousel"
+        data-bs-slide="prev"
+        aria-label="Previous Slide"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#restaurantCarousel"
+        data-bs-slide="next"
+        aria-label="Next Slide"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Floating particles -->
+  <div class="particle small" style="top: 20%; left: 12%; animation-delay: 0s;"></div>
+  <div class="particle medium" style="top: 45%; left: 25%; animation-delay: 2s;"></div>
+  <div class="particle large" style="top: 70%; left: 75%; animation-delay: 1s;"></div>
+  <div class="particle small" style="top: 60%; left: 80%; animation-delay: 4s;"></div>
+</section>
+
+<!-- Our story -->
+<section class="about-section" id="about">
+  <div class="about-content">
+    <div class="about-text">
+      <h2 class="about-heading">Our Story</h2>
+      <p>
+        At Epicurean, we believe food is not just a meal — it's an experience. Blending tradition with innovation, our chefs craft dishes that celebrate flavors, culture, and art. From our locally sourced ingredients to our curated ambience, everything is designed to enchant your senses.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="resturantInterior.jpg" alt="Chef Signature" />
+    </div>
+  </div>
+</section>
+
+
+<!-- Our Menu -->
+ <section class="menu-section" id="menu">
+  <h2 class="menu-title">Our Menu</h2>
+
+  <div class="menu-grid">
+    <div class="menu-item">
+      <h3>Truffle Garlic Bread</h3>
+      <p>Crispy artisan bread topped with truffle oil & garlic butter.</p>
+      <span class="price">$7.50</span>
+    </div>
+    <div class="menu-item">
+      <h3>Seared Scallops</h3>
+      <p>Pan-seared scallops on a bed of lemon-pea purée.</p>
+      <span class="price">$14.00</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Epicurean Fine Dining. All rights reserved.
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav.navbar');
+    if(window.scrollY > 40) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // GSAP animations on page load
+  window.onload = () => {
+    // Animate tagline with subtle 3D rotation
+    gsap.fromTo('.tagline', 
+      {opacity: 0, y: 40, rotationX: 45, transformOrigin:"center bottom"},
+      {opacity: 1, y: 0, rotationX: 0, duration: 1.6, ease: "power4.out"}
+    );
+
+    // Animate subtagline with fade + slide
+    gsap.fromTo('.subtagline', 
+      {opacity: 0, y: 40}, 
+      {opacity: 1, y: 0, duration: 1.4, delay: 0.5, ease: "power3.out"}
+    );
+
+    // Animate buttons with stagger
+    gsap.fromTo('.btn-glow', 
+      {opacity: 0, y: 20}, 
+      {opacity: 1, y: 0, duration: 1, delay: 0.9, ease: "back.out(1.7)", stagger: 0.15}
+    );
+
+    // Floating particle subtle scale animation
+    gsap.to('.particle', {
+      scale: 1.2,
+      repeat: -1,
+      yoyo: true,
+      duration: 3,
+      ease: 'sine.inOut',
+      stagger: 0.3
+    });
+  };
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

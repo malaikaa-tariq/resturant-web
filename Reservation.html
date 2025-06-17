@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservations - Epicurean</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: #0f0f0f;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+
+    .reservation-hero {
+      height: 50%;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                  url('res.jpg') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .reservation-hero h1 {
+      color: gold;
+      font-size: 3rem;
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .form-control {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid gold;
+      color: white;
+      /* Increased padding for larger input boxes */
+      padding: 0.75rem 1rem;
+    }
+
+    .form-control:focus {
+      background: rgba(255,255,255,0.1);
+      border-color: gold;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .btn-gold {
+      background: gold;
+      color: #0f0f0f;
+      font-weight: bold;
+      transition: all 0.3s;
+      /* Increased padding for a slightly larger button */
+      padding: 0.75rem 1.5rem;
+    }
+
+    .btn-gold:hover {
+      background: #e6c200;
+      color: black;
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 215, 0, 0.6); /* Soft gold */
+    }
+
+    /* Custom style for SweetAlert border */
+    .swal-gold-border {
+        border: 1px solid gold !important;
+    }
+
+    @media (max-width: 768px) {
+      .reservation-hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">
+    <img src="logo 2.png" alt="Epicurean Logo" class="navbar-logo" />
+    Epicurean
+  </a>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav gap-4">
+      <li class="nav-item">
+        <a class="nav-link" href="landing.html"><i class="fa-solid fa-house"></i> Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="menu.html"><i class="fa-solid fa-utensils"></i> Menu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link active" href="reservations.html"><i class="fa-solid fa-calendar-check"></i> Reservations</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="reservation-hero">
+    <div>
+      <h1><b>Book Your Table</b></h1>
+      <h4 class="text-light fst-italic">Experience fine dining. Reserve your spot today.</h4>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="glass-box">
+          <h4 class="text-gold mb-4 text-center">Make a Reservation</h4>
+          <form id="reservationForm">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label for="name" class="form-label text-gold">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label text-gold">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label for="phone" class="form-label text-gold">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g., +92 3XX XXXXXXX" required>
+              </div>
+              <div class="col-md-6">
+                <label for="guests" class="form-label text-gold">Number of Guests</label>
+                <input type="number" class="form-control" id="guests" name="guests" min="1" placeholder="e.g., 2" required>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label for="date" class="form-label text-gold">Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+              </div>
+              <div class="col-md-6">
+                <label for="time" class="form-label text-gold">Time</label>
+                <input type="time" class="form-control" id="time" name="time" required>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="occasion" class="form-label text-gold">Occasion (Optional)</label>
+              <input type="text" class="form-control" id="occasion" name="occasion" placeholder="e.g., Birthday, Anniversary">
+            </div>
+            <div class="mb-5"> <label for="specialRequests" class="form-label text-gold">Special Requests (Optional)</label>
+              <textarea class="form-control" id="specialRequests" name="specialRequests" rows="4" placeholder="Dietary restrictions, seating preferences, etc."></textarea> </div>
+            <button type="submit" class="btn btn-gold w-100">Confirm Reservation</button>
+          </form>
+          <div class="text-center mt-4">
+            <p class="text-muted">For parties larger than 8, please call us directly:</p>
+            <p class="h5 text-gold"><i class="fa-solid fa-phone-alt"></i> +92 345 678 9012</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("reservationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Simple validation example
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const guests = document.getElementById('guests').value.trim();
+      const date = document.getElementById('date').value.trim();
+      const time = document.getElementById('time').value.trim();
+
+      if (!name || !email || !phone || !guests || !date || !time) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Missing Information',
+          text: 'Please fill out all required fields to make a reservation.',
+          customClass: {
+            popup: 'swal-gold-border' // Custom class for styling
+          },
+          didOpen: () => {
+              const popup = Swal.getPopup();
+              if (popup) {
+                  popup.style.borderColor = 'gold'; // Apply gold border
+              }
+          }
+        });
+        return;
+      }
+
+      // Simulate a successful reservation (in a real app, this would send data to a server)
+      Swal.fire({
+        icon: 'success',
+        title: 'Reservation Confirmed!',
+        html: `Thank you, **${name}**! Your table for **${guests}** guests on **${date}** at **${time}** has been booked. We look forward to seeing you!`,
+        customClass: {
+            popup: 'swal-gold-border' // Custom class for styling
+        },
+        didOpen: () => {
+            const popup = Swal.getPopup();
+            if (popup) {
+                popup.style.borderColor = 'gold'; // Apply gold border
+            }
+            // Remove the default SweetAlert focus outline
+            Swal.getConfirmButton().style.boxShadow = 'none';
+        }
+      });
+
+      this.reset(); // Clear the form after successful submission
+    });
+  </script>
+</body>
+</html>
